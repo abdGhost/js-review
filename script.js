@@ -239,6 +239,7 @@ function getTotalReviewCount(book) {
 const books = getBooks();
 books;
 
+// MAP
 const titles = books.map((book) => book.title);
 console.log(titles);
 
@@ -256,3 +257,14 @@ const essentialData = books.map((book) => ({
 }));
 
 essentialData;
+
+// Fliter
+const longBooksWithMovieAdaption = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooksWithMovieAdaption;
+
+const adventureBook = books
+  .filter((books) => books.genres.includes('adventure'))
+  .map((book) => book.title);
+adventureBook;
